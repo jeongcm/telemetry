@@ -6,7 +6,7 @@ import (
 )
 
 func TestNew(t *testing.T) {
-	p, err := New(constant.BackingServiceTelemetry)
+	p, err := New("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -20,7 +20,7 @@ func TestNew(t *testing.T) {
 }
 
 func TestPrometheus_NodeMeta(t *testing.T) {
-	p, err := New(constant.BackingServiceTelemetry)
+	p, err := New("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -34,7 +34,7 @@ func TestPrometheus_NodeMeta(t *testing.T) {
 }
 
 func TestPrometheus_NodeCPUCoreCnt(t *testing.T) {
-	p, err := New(constant.BackingServiceTelemetry)
+	p, err := New("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -51,7 +51,7 @@ func TestPrometheus_NodeCPUCoreCnt(t *testing.T) {
 }
 
 func TestPrometheus_NodeCPUUsedRate(t *testing.T) {
-	p, err := New(constant.BackingServiceTelemetry)
+	p, err := New("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -68,7 +68,7 @@ func TestPrometheus_NodeCPUUsedRate(t *testing.T) {
 }
 
 func TestPrometheus_NodeMemTotalBytes(t *testing.T) {
-	p, err := New(constant.BackingServiceTelemetry)
+	p, err := New("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -84,7 +84,7 @@ func TestPrometheus_NodeMemTotalBytes(t *testing.T) {
 }
 
 func TestPrometheus_NodeMemUsedBytes(t *testing.T) {
-	p, err := New(constant.BackingServiceTelemetry)
+	p, err := New("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -100,7 +100,7 @@ func TestPrometheus_NodeMemUsedBytes(t *testing.T) {
 }
 
 func TestPrometheus_NodeNetworkReceiveBytes(t *testing.T) {
-	p, err := New(constant.BackingServiceTelemetry)
+	p, err := New("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -116,7 +116,7 @@ func TestPrometheus_NodeNetworkReceiveBytes(t *testing.T) {
 }
 
 func TestPrometheus_NodeNetworkTransmitBytes(t *testing.T) {
-	p, err := New(constant.BackingServiceTelemetry)
+	p, err := New("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -132,7 +132,7 @@ func TestPrometheus_NodeNetworkTransmitBytes(t *testing.T) {
 }
 
 func TestPrometheus_NodeFilesystemSizeBytes(t *testing.T) {
-	p, err := New(constant.BackingServiceTelemetry)
+	p, err := New("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -148,7 +148,7 @@ func TestPrometheus_NodeFilesystemSizeBytes(t *testing.T) {
 }
 
 func TestPrometheus_NodeFilesystemUsedBytes(t *testing.T) {
-	p, err := New(constant.BackingServiceTelemetry)
+	p, err := New("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -164,22 +164,22 @@ func TestPrometheus_NodeFilesystemUsedBytes(t *testing.T) {
 }
 
 func TestPrometheus_ServiceMeta(t *testing.T) {
-	p, err := New(constant.BackingServiceTelemetry)
+	p, err := New("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	_, err = p.ServiceMeta(constant.BackingServiceTelemetry)
+	_, err = p.ServiceMeta("testTelemetry")
 	assert.NoError(t, err)
 }
 
 func TestPrometheus_ServiceMemUsedBytes(t *testing.T) {
-	p, err := New(constant.BackingServiceTelemetry)
+	p, err := New("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	services, err := p.ServiceMeta(constant.BackingServiceTelemetry)
+	services, err := p.ServiceMeta("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -196,12 +196,12 @@ func TestPrometheus_ServiceMemUsedBytes(t *testing.T) {
 }
 
 func TestPrometheus_ServiceNetworkReceiveBytes(t *testing.T) {
-	p, err := New(constant.BackingServiceTelemetry)
+	p, err := New("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	services, err := p.ServiceMeta(constant.BackingServiceTelemetry)
+	services, err := p.ServiceMeta("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -218,12 +218,12 @@ func TestPrometheus_ServiceNetworkReceiveBytes(t *testing.T) {
 }
 
 func TestPrometheus_ServiceNetworkTransmitBytes(t *testing.T) {
-	p, err := New(constant.BackingServiceTelemetry)
+	p, err := New("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	services, err := p.ServiceMeta(constant.BackingServiceTelemetry)
+	services, err := p.ServiceMeta("testTelemetry")
 	if err != nil {
 		t.Fatal(err)
 	}
